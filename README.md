@@ -81,26 +81,6 @@ Keep in mind that as you continue to use copilot, you may not want some of the s
   Add a link to get support, GitHub status page, code of conduct, license link.
 -->
 
-```mermaid
-sequenceDiagram
-    participant Client as Client
-    participant Controller as Controller
-    participant Mediator as Mediator
-    participant Handler as GetPersonalDetailsHandler
-    participant Repository as IRepository
-    participant Mapper as IMapper
-    Client->>Controller: Send GetPersonalDetailsRequest
-    Controller->>Mediator: Mediate GetPersonalDetailsRequest
-    Mediator->>Handler: Handle GetPersonalDetailsRequest
-    Handler->>Repository: Query Customer
-    Repository-->>Handler: Return Customer Entity
-    Handler->>Mapper: Map Customer Entity to Customer Model
-    Mapper-->>Handler: Return Customer Model
-    Handler-->>Mediator: Return Customer Model
-    Mediator-->>Controller: Return Customer Model
-    Controller-->>Client: Return Customer Model
-```
-
 ---
 
 Get help: [Post in our discussion board](https://github.com/orgs/skills/discussions/categories/code-with-copilot) &bull; [Review the GitHub status page](https://www.githubstatus.com/)
